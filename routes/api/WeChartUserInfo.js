@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
         request(getwechatuserinfourl, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var data=  JSON.parse(body);
-                res.send(data);
+                res.status(200).send(data);
             } else {
                 next();
             }

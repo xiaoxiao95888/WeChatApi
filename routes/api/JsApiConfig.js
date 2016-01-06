@@ -27,7 +27,7 @@ router.get('/', function (req, res, next) {
                 Timestamp: timestamp.toString(),
                 //JsApiList: req.query.jsApiList
             };
-            res.send(model);
+            res.status(200).send(model);
         } else {
             next();
         }

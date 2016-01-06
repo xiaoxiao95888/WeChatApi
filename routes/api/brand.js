@@ -7,16 +7,16 @@ var db = require("./../../database");
 /* GET users listing. */
 router.get('/', function (req, res, next) {
     db.getBrands(function (data) {
-        res.send(data);
+        res.status(200).send(data);
     });
 });
 router.get('/:id', function (req, res, next) {
     var id = req.params.id;
     db.getBrand(id, function (data) {
-        res.send(data);
+        res.status(200).send(data);
     });
 });
 router.post('/', function (req, res, next) {
-    res.send(req.body);
+    res.status(200).send(req.body);
 });
 module.exports = router;
